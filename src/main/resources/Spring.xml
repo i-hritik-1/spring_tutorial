@@ -3,11 +3,24 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="alien" class="org.example.Alien" scope="prototype">
+    <bean id="alien" class="org.example.Alien">
+
+<!--        Construcor injection - If we are not using name, index and type then we should
+            always write the constructor in sequence as in constructor definition.-->
+<!--        <constructor-arg value="21"/>-->
+<!--        <constructor-arg ref="lap1"/>-->
+
+<!--        Using type for specifying what type of variable is going to initialized-->
+<!--        <constructor-arg type="org.example.Laptop" ref="lap1"/>-->
+<!--        <constructor-arg type="int" value="21" />-->
+
+<!--        Index specify the position of variable which is passed in the constructor as an argument -->
+        <constructor-arg index="0" value="21"/>
+        <constructor-arg index="1" ref="lap1"/>
 
     </bean>
 
-    <bean id="lap" class="org.example.Laptop" scope="prototype">
+    <bean id="lap1" class="org.example.Laptop">
 
     </bean>
     <!-- bean definitions here -->
