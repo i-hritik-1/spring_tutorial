@@ -12,10 +12,20 @@ public class App
     {
         // Java Based Configuration
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Alien obj = context.getBean(Alien.class);
+        obj.code("Hritik");
+
+
+
+
+        /*
+
         Desktop desk = context.getBean(Desktop.class);
         desk.compile();
         Desktop desk1 = context.getBean(Desktop.class);
         desk1.compile();
+
+         */
 
     }
 }

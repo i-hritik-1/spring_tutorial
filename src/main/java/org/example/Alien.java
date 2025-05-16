@@ -1,11 +1,22 @@
 package org.example;
 
-import org.springframework.stereotype.Component;
-
-//@Component
 public class Alien {
-    private  int age;
+
+    public Alien()
+    {
+        System.out.println("Alien object created......");
+    }
+
+    private int age;
     private Computer comp;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public Computer getComp() {
         return comp;
@@ -15,10 +26,16 @@ public class Alien {
         this.comp = comp;
     }
 
+    public void code(String name)
+    {
+        System.out.println("My name is " + name + " and I am " + age + " years old.");
+//        comp.compile();
+    }
+}
 
+/*
 
-
-
+//    private  int age;
 //    private Laptop lap;
 //
 //    public Alien()
@@ -33,11 +50,10 @@ public class Alien {
 //        this.lap = lap;
 //    }
 
-
-
-    public void code(String name)
-    {
-        System.out.println("My name is " + name + " and I am " + age + " years old.");
-        comp.compile();
-    }
+public void code(String name)
+{
+    System.out.println("My name is " + name + " and I am " + age + " years old.");
+    comp.compile();
 }
+
+ */
