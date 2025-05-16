@@ -1,5 +1,10 @@
 package org.example;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Alien {
 
     public Alien()
@@ -7,7 +12,15 @@ public class Alien {
         System.out.println("Alien object created......");
     }
 
+    @Value("21")
     private int age;
+
+    /*
+        Field Injection
+            @Autowired
+            @Qualifier("laptop")
+
+     */
     private Computer comp;
 
     public int getAge() {
@@ -22,6 +35,12 @@ public class Alien {
         return comp;
     }
 
+    /*
+        Setter INJECTION
+
+    */
+    @Autowired
+    @Qualifier("laptop")
     public void setComp(Computer comp) {
         this.comp = comp;
     }
@@ -29,7 +48,7 @@ public class Alien {
     public void code(String name)
     {
         System.out.println("My name is " + name + " and I am " + age + " years old.");
-//        comp.compile();
+        comp.compile();
     }
 }
 
